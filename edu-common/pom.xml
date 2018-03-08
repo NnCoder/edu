@@ -12,7 +12,7 @@
 
     <artifactId>edu-common</artifactId>
     <packaging>pom</packaging>
-    <!-- 公共工程模块 -->
+    <!--公共工程模块 -->
     <modules>
   
         <module>../edu-common-utils</module>
