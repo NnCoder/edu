@@ -11,8 +11,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>edu-common</artifactId>
-    <packaging>pom</packaging>
-    <!--公共工程模块！！！！ -->
+    <packaging>jar</packaging>
+    <!-- 公共工程模块 -->
     <modules>
   
         <module>../edu-common-utils</module>
