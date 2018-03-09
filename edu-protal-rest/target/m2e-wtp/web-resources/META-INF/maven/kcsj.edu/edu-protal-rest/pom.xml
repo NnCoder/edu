@@ -12,6 +12,7 @@
   <packaging>war</packaging>
   
   <dependencies>
+<<<<<<< HEAD
   	<!-- JSTL -->
   	<dependency>
   		<groupId>jstl</groupId>
@@ -27,6 +28,14 @@
   		<groupId>mysql</groupId>
   		<artifactId>mysql-connector-java</artifactId>
   	</dependency>
+=======
+  	<dependency>
+  		<groupId>jstl</groupId>
+  		<artifactId>jstl</artifactId>
+  	</dependency>
+  	
+  	
+>>>>>>> refs/remotes/origin/master
   </dependencies>
  
   
