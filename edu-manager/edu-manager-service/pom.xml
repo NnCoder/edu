@@ -5,5 +5,12 @@
     <artifactId>edu-manager</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>edu-manager-exam-service</artifactId>
+  <artifactId>edu-manager-service</artifactId>
+  <packaging>pom</packaging>
+  <description>后台管理Service</description>
+  
+  
+  <modules>
+  	<module>edu-manager-service-exam</module>
+  </modules>
 </project>
