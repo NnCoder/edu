@@ -1,10 +1,8 @@
 package kcsj.edu.manager.pojo;
 
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.baomidou.mybatisplus.enums.IdType;
-import com.baomidou.mybatisplus.mapper.SqlCondition;
 
 @TableName("user")
 public class User {
@@ -13,7 +11,6 @@ public class User {
 	
 	private String username;
 	private String password;
-	@TableField(condition=SqlCondition.LIKE)
 	private String name;
 	private Integer age;
 	private Integer sex;

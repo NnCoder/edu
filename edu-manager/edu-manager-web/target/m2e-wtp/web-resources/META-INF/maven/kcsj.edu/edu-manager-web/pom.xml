@@ -10,6 +10,14 @@
 	<packaging>war</packaging>
 
 	<dependencies>
+	<!-- 后台管理公用Dao层 -->
+		<dependency>
+			<groupId>kcsj.edu</groupId>
+			<artifactId>edu-manager-dao</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	
+	<!-- Service -->
 		<dependency>
 			<groupId>kcsj.edu</groupId>
 			<artifactId>edu-manager-service-exam</artifactId>
@@ -34,6 +42,11 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jsp-api</artifactId>
 			<scope>provided</scope>
+		</dependency>
+		<!-- Freemarker -->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
 		</dependency>
 		<!-- 文件上传组件 -->
 		<dependency>

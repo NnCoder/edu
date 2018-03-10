@@ -1,9 +1,7 @@
 package kcsj.edu.manager.pojo;
 
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
-import com.baomidou.mybatisplus.mapper.SqlCondition;
 
 /**
  * 资源类(文章,下载资料)
@@ -17,7 +15,6 @@ import com.baomidou.mybatisplus.mapper.SqlCondition;
 public class Resource {
 	@TableId
 	private int id;
-	@TableField(condition = SqlCondition.LIKE)
 	private String title;
 
 	private String desc;
