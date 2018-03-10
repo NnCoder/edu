@@ -12,5 +12,6 @@
   
   <modules>
   	<module>edu-manager-service-exam</module>
+  	<module>edu-manager-service-homework</module>
   </modules>
 </project>
