@@ -3,6 +3,7 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
         <property name="context-root" value="edu-protal-rest"/>
         <property name="java-output-path" value="/edu-protal-rest/build/classes"/>
     </wb-module>
