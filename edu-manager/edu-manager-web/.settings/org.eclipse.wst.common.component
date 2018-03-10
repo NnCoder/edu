@@ -4,6 +4,12 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="edu-manager-service-exam-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/edu-manager-service-exam/edu-manager-service-exam">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="edu-manager-service-homework-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/edu-manager-service-homework/edu-manager-service-homework">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module archiveName="edu-common-pojo-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/edu-common-pojo/edu-common-pojo">
             <dependency-type>uses</dependency-type>
         </dependent-module>

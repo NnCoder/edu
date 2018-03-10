@@ -25,6 +25,7 @@
   <modules>
   	<module>edu-manager-web</module>
   	<module>edu-manager-service</module>
+  	<module>edu-manager-pojo</module>
   </modules>
   
   

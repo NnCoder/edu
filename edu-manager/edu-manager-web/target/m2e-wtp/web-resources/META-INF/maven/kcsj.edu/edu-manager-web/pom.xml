@@ -10,7 +10,16 @@
 	<packaging>war</packaging>
 
 	<dependencies>
-		
+		<dependency>
+			<groupId>kcsj.edu</groupId>
+			<artifactId>edu-manager-service-exam</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>kcsj.edu</groupId>
+			<artifactId>edu-manager-service-homework</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<!-- JSP相关 -->
 		<dependency>
 			<groupId>jstl</groupId>
