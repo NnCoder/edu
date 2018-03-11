@@ -16,7 +16,16 @@
 		<property name="hashIterations" value="1"></property>
 	</bean>
 	
+	<!-- shiro-ehcache缓存 -->
+	<bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+		<property name="cacheManagerConfigFile" value="classpath:ehcache.xml"></property>
+	</bean>
+	<!-- 安全管理器 -->
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
-		<property name="cacheManager" ref="cacheManager"></property>
+		<property name="realm" ref="userRealm"></property>
+		<property name="cacheManager" ref="shiroEhcacheManager"></property>
+	</bean>
+	
+	<bean id="userRealm" class="kcsj.edu.manager.shiro.UserRealm">
 	</bean>
 </beans>

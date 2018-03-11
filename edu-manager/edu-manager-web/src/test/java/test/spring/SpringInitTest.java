@@ -10,9 +10,7 @@ public class SpringInitTest {
 	
 	@Test
 	public void test() {
-		ApplicationContext atx1 = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-dao.xml");
-		ApplicationContext atx2 = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-service.xml");
-		UserMapper userMapper = atx1.getBean(UserMapper.class);
+		ApplicationContext atx1 = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-*.xml");
 		
 	}
 }

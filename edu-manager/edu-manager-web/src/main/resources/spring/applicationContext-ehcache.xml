@@ -13,15 +13,15 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 	
-	<bean id="ehcacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+	<!-- <bean id="ehcacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
 		<property name="configLocation" value="classpath:ehcache.xml"></property>
 	</bean>
 	
 	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
         <property name="cacheManager" ref="ehcacheManager"/>
         <property name="transactionAware" value="true"/>
-    </bean>
+    </bean> -->
     
     <!-- cache注解 -->
-    <cache:annotation-driven cache-manager="cacheManager" proxy-target-class="true"/>
+   <!--  <cache:annotation-driven cache-manager="cacheManager" proxy-target-class="true"/> -->
 </beans>

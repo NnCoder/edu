@@ -7,4 +7,12 @@
   </parent>
   <artifactId>edu-manager-service-system</artifactId>
   <description>后台管理：系统管理Service</description>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>kcsj.edu</groupId>
+  		<artifactId>edu-manager-dao</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>
