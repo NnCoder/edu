@@ -1,10 +1,124 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	Date: ${time?date}
-</body>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>视频教育平台后台管理系统</title>
+		<link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.4.1/themes/default/easyui.css" />
+		<link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.4.1/themes/icon.css" />
+		<link rel="stylesheet" type="text/css" href="css/edu.css" />
+		<script type="text/javascript" src="js/jquery-easyui-1.4.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="js/jquery-easyui-1.4.1/locale/easyui-lang-zh_CN.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<style type="text/css">
+			.error{
+				color: red;
+			}
+			.content {
+				padding: 10px 10px 10px 10px;
+			}
+		</style>
+	</head>
+	
+	<body class="easyui-layout">
+		<div data-options="region:'north'" style="overflow: hidden;height: 56px;">
+				<img style="float: left;" src="img/jessic-c-icon-76.ico" height="120px"/>
+				<h1>操作系统精品课程网站后台管理系统</h1>
+				
+		</div>
+			
+			
+		
+		<div data-options="region:'west',title:'菜单',split:true" style="width:180px;">
+			<ul id="menu" class="easyui-tree" style="margin-top: 10px;margin-left: 5px;">
+				<li data-options="id:-1">
+					<span>课程管理</span>
+					<ul>
+						<li data-options="attributes:{'url':'chapter/manager.html'}">章节管理</li>
+						<li data-options="attributes:{'url':'chapter/framwork.html'}">架构预览</li>
+					</ul>
+				</li>
+				<li data-options="id:-1">
+					<span>考试题库管理</span>
+					<ul>
+						<li data-options="attributes:{'url':'chapter2.html'},id:3,parentId:-1">查看题库</li>
+						<li data-options="attributes:{'url':'chapter2.html'}">添加试题</li>
+					</ul>
+				</li>
+				<li data-options="id:-1">
+					<span>作业题库管理</span>
+					<ul>
+						<li data-options="attributes:{'url':'chapter2.html'},id:3,parentId:-1">查看题库</li>
+						<li data-options="attributes:{'url':'chapter2.html'}">添加题目</li>
+					
+					</ul>
+				</li>
+				<li data-options="id:-1">
+					<span>教学相关</span>
+					<ul>
+						<li data-options="attributes:{'url':'chapter2.html'},id:3,parentId:-1">在线批卷</li>
+						<li data-options="attributes:{'url':'teacher-list.html'}">发布考试</li>
+						<li data-options="attributes:{'url':'chapter2.html'}">批改作业</li>
+						<li data-options="">在线答疑</li>
+					</ul>
+				</li>
+				<li data-options="id:-1">
+					<span>用户管理</span>
+					<ul>
+						<li data-options="attributes:{'url':'chapter2.html'},id:3,parentId:-1">查看用户</li>
+						<li data-options="attributes:{'url':'chapter2.html'}">查看角色</li>
+						<li data-options="attributes:{'url':'teacher-list.html'}">查看相关权限</li>
+					</ul>
+				</li>
+				<li data-options="id:-1">
+					<span>内容管理</span>
+					<ul>
+						<li data-options="attributes:{'url':'chapter2.html'},id:3,parentId:-1">课程介绍</li>
+						<li data-options="attributes:{'url':'chapter2.html'}">师资队伍</li>
+						<li data-options="attributes:{'url':'teacher-list.html'}">教学资源</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div data-options="region:'center',title:''">
+			<div id="tabs" class="easyui-tabs">
+				<div title="首页" style="padding:20px;">
+					欢迎登录视频教育平台后台管理系统！
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$(function() {
+				$('#menu').tree({
+
+					onClick: function(node) {
+						if($('#menu').tree("isLeaf", node.target)) { //判断点击的节点是否为叶子节点
+							console.log(node.text)
+							var tabs = $("#tabs");
+							var tab = tabs.tabs("getTab", node.text);
+							if(tab) {
+								//选中
+								tabs.tabs("select", node.text);
+							} else {
+								//新增tab
+								tabs.tabs('add', {
+									title: node.text,
+									href: node.attributes.url,
+									closable: true,
+									bodyCls: "content"
+								});
+							}
+						}
+					},
+					
+					
+				});
+			});
+
+			
+		</script>
+	</body>
+
 </html>
