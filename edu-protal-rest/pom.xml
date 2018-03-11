@@ -70,7 +70,7 @@
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<configuration>
 					<port>8080</port>
-					<path>/</path>
+					<path>/edu-protal-rest</path>
 				</configuration>
 			</plugin>
     </plugins>
