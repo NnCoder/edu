@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 	
-	
+	<!-- 定义各个依赖版本号 -->
     <properties>
         <junit.version>4.12</junit.version>
         <spring.version>4.3.13.RELEASE</spring.version>
@@ -42,6 +42,8 @@
         <quartz.version>2.2.2</quartz.version>
         <thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>
         <fastjson.version>1.2.46</fastjson.version>
+        <shiro-spring.version>1.4.0</shiro-spring.version>
+        <ehcache.version>2.10.4</ehcache.version>
     </properties>
 
     <dependencyManagement>
@@ -239,7 +241,24 @@
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
             </dependency>
-
+			<!-- Shiro权限控制框架 -->
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-spring</artifactId>
+				<version>${shiro-spring.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>slf4j-api</artifactId>
+						<groupId>org.slf4j</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<!-- Ehcache -->
+			<dependency>
+				<groupId>net.sf.ehcache</groupId>
+				<artifactId>ehcache</artifactId>
+				<version>${ehcache.version}</version>
+			</dependency>
         </dependencies>
     </dependencyManagement>
 
