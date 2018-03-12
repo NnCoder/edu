@@ -24,7 +24,7 @@
 	<bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="typeAliasesPackage" value="kcsj.edu.manager.pojo"></property>
-		<property name="mapperLocations" value="kcsj/edu/manager/mapper/xml/*.xml"></property>
+		<property name="mapperLocations" value="classpath:kcsj/edu/manager/mapper/xml/*.xml"></property>
 		<property name="configuration" ref="mybatisConfig"></property>
 		<property name="globalConfig" ref="globalConfig"></property>
 		<property name="plugins">

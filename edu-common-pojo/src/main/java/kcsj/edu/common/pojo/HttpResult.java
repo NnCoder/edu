@@ -39,6 +39,10 @@ public class HttpResult {
 		return new HttpResult(null);
 	}
 	
+	public static HttpResult error(String msg) {
+		return new HttpResult(400, msg, null);
+	}
+	
 	public static HttpResult nofound() {
 		return new HttpResult(404, "找不到指定资源", null);
 	}

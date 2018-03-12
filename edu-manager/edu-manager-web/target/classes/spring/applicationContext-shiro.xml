@@ -46,9 +46,10 @@
     </bean>
     
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
-    	<property name="loginUrl" value="/login.html"></property>
+    	<property name="securityManager" ref="securityManager"></property>
+    	<property name="loginUrl" value="/login"></property>
     	<property name="successUrl" value="/"></property>
-    	<property name="unauthorizedUrl" value="/error.html"></property>
+    	<property name="unauthorizedUrl" value="/error"></property>
     	<property name="filterChainDefinitions">
             <value>
                 <!-- 
@@ -59,6 +60,7 @@
                 /js/** = anon
                 /css/** = anon
                 /img/** = anon
+                /assets/** = anon
                 /login.html = anon
                 /logout = logout
                 /** = authc
