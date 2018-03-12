@@ -16,6 +16,7 @@
 	<mvc:resources location="/img/" mapping="/img/**" />
 	<mvc:resources location="/images/" mapping="/images/**"></mvc:resources>
 	<mvc:resources location="/css/" mapping="/css/**"></mvc:resources>
+	<mvc:resources location="/assets/" mapping="/assets/**"></mvc:resources>
 	
 	<!-- FreeMarker视图渲染器配置 -->
 	<bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">

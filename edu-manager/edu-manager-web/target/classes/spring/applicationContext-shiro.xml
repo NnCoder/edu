@@ -9,6 +9,9 @@
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 	
 	<description>Shiro安全配置</description>
+	<!-- shiro Spring生命周期管理器 -->
+	<bean class="org.apache.shiro.spring.LifecycleBeanPostProcessor"></bean>
+	
 	<bean id="passwordHash" class="kcsj.edu.manager.shiro.PasswordHash">
 		<!-- 散列算法 -->
 		<property name="algorithmName" value="md5"></property>
@@ -26,6 +29,47 @@
 		<property name="cacheManager" ref="shiroEhcacheManager"></property>
 	</bean>
 	
+	<!-- 会话管理器 -->
+    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <!-- 设置全局会话超时时间 半小时 SpringEL-->
+        <property name="globalSessionTimeout" value="#{30 * 60 * 1000}"/>
+        <!-- url上带sessionId 默认为true -->
+        <property name="sessionIdUrlRewritingEnabled" value="false"/>
+        <property name="sessionDAO" ref="sessionDAO"/>
+    </bean>
+	
+	<!-- 会话DAO 用于会话的CRUD -->
+    <bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO">
+        <!-- Session缓存名字，默认就是shiro-activeSessionCache -->
+        <property name="activeSessionsCacheName" value="activeSessionCache"/>
+        <property name="cacheManager" ref="shiroEhcacheManager"/>
+    </bean>
+    
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+    	<property name="loginUrl" value="/login.html"></property>
+    	<property name="successUrl" value="/"></property>
+    	<property name="unauthorizedUrl" value="/error.html"></property>
+    	<property name="filterChainDefinitions">
+            <value>
+                <!-- 
+                    anon  不需要认证
+                    authc 需要认证
+                    user  验证通过或RememberMe登录的都可以
+                -->
+                /js/** = anon
+                /css/** = anon
+                /img/** = anon
+                /login.html = anon
+                /logout = logout
+                /** = authc
+            </value>
+        </property>
+    	
+    </bean>
+	
+	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager"></property>
+	</bean>
 	<bean id="userRealm" class="kcsj.edu.manager.shiro.UserRealm">
 	</bean>
 </beans>

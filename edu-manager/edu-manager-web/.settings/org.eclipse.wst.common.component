@@ -16,6 +16,9 @@
         <dependent-module archiveName="edu-manager-service-homework-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/edu-manager-service-homework/edu-manager-service-homework">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="edu-manager-service-system-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/edu-manager-service-system/edu-manager-service-system">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module archiveName="edu-common-pojo-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/edu-common-pojo/edu-common-pojo">
             <dependency-type>uses</dependency-type>
         </dependent-module>

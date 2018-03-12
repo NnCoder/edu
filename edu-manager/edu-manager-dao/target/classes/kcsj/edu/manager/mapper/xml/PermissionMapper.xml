@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kcsj.edu.manager.mapper.PermissionMapper">
+	<sql id="Base_Column_List">
+		id,parent_id,name,url,type,perms
+	</sql>
+	
+	<select id="selectPermsByUserId" resultType="java.lang.String">
+		select perms from permission p where p.id in
+		(select permission_id from role_permission where role_id in
+		(select role_id from user_role where user_id=#{userId})
+		) and type=0
+	</select>
+	<select id="selectMenuByUserId" resultType="Permission">
+		select 
+		<include refid="Base_Column_List"/>
+		from permission p where p.id in
+		(select permission_id from role_permission where role_id in
+		(select role_id from user_role where user_id=#{userId})
+		) and type=0 and parent_id=#{parentId}
+	</select>
+</mapper>
