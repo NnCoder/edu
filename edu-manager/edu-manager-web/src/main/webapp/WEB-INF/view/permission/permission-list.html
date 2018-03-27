@@ -1,0 +1,21 @@
+<script type="text/javascript" src="${rc.contextPath}/js/perms/perms-list.js"></script>
+<table class="easyui-datagrid" id="permsList"
+	data-options="singleSelect:false,collapsible:true,pagination:true,method:'get',toolbar:perms.listToolbar,pageSize:20,url:'/perms/list'">
+	<thead>
+		<tr>
+			<th data-options="field:'id',width:30">ID</th>
+			<th data-options="field:'parentId',width:120">父ID</th>
+			<th data-options="field:'name',width:100">名称</th>
+			<th data-options="field:'url',width:120">URL</th>
+			<th
+				data-options="field:'type',width:60,align:'center',formatter:perms.formatPermsType">类型</th>
+			<th
+				data-options="field:'perms',width:150,align:'center'">相关权限</th>
+			
+			<th
+				data-options="field:'createtime',width:130,align:'center',formatter:TT.formatDateTime">创建日期</th>
+			<th
+				data-options="field:'updatetime',width:130,align:'center',formatter:TT.formatDateTime">更新日期</th>
+		</tr>
+	</thead>
+</table>

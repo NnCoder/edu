@@ -1,16 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
+	<#include "/common/common-value.html">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>视频教育平台后台管理系统</title>
-		<link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.4.1/themes/default/easyui.css" />
-		<link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.4.1/themes/icon.css" />
-		<link rel="stylesheet" type="text/css" href="css/edu.css" />
-		<script type="text/javascript" src="js/jquery-easyui-1.4.1/jquery.min.js"></script>
-		<script type="text/javascript" src="js/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
-		<script type="text/javascript" src="js/jquery-easyui-1.4.1/locale/easyui-lang-zh_CN.js"></script>
-		<script type="text/javascript" src="js/common.js"></script>
+		<#include "/common/common-css.html">
+		
 		<style type="text/css">
 			.error{
 				color: red;
@@ -68,7 +63,7 @@
 					<ul>
 						<li data-options="attributes:{'url':'chapter2.html'},id:3,parentId:-1">查看用户</li>
 						<li data-options="attributes:{'url':'chapter2.html'}">查看角色</li>
-						<li data-options="attributes:{'url':'teacher-list.html'}">查看相关权限</li>
+						<li data-options="attributes:{'url':'page/permission/permission-list'}">查看相关权限</li>
 					</ul>
 				</li>
 				<li data-options="id:-1">
@@ -84,11 +79,14 @@
 		<div data-options="region:'center',title:''">
 			<div id="tabs" class="easyui-tabs">
 				<div title="首页" style="padding:20px;">
-					欢迎登录视频教育平台后台管理系统！
+					<font size="4">${name},欢迎您登录视频教育平台后台管理系统！<br>
+					现在时间是:${time?datetime}<br>
+					<a href="logout">安全退出</a><br>
+					</font>
 				</div>
 			</div>
 		</div>
-		
+		<#include "/common/common-js.html"/>
 		<script type="text/javascript">
 			$(function() {
 				$('#menu').tree({

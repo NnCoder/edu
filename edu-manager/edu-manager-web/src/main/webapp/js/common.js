@@ -19,6 +19,8 @@ Date.prototype.format = function(format){
     return format; 
 };
 
+
+
 var TT = TAOTAO = {
 	// 编辑器参数
 	kingEditorParams : {

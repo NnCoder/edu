@@ -1,11 +1,18 @@
 package kcsj.edu.manager.pojo;
 
+import java.io.Serializable;
+
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.baomidou.mybatisplus.enums.IdType;
 
 @TableName("user")
-public class User {
+public class User implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6396686079342835873L;
+
 	@TableId(type=IdType.ID_WORKER)
 	private int id;
 	

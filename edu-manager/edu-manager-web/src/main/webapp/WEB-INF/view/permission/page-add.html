@@ -1,0 +1,45 @@
+<form id="permAddForm" method="post">
+		<table cellpadding="5">
+			<tr>
+				<td>权限名:</td>
+				<td><input class="easyui-textbox" type="text" name="name" data-options="required:true" style="width: 280px;"></input>
+				</td>
+			
+			</tr>
+			<tr>
+				<td>权限: <font color="red">(xxx:xxx:xxx 例:sys:chapter:add)</font></td>
+				<td>
+					<input class="easyui-textbox" type="text" name="perms" value="">
+				</td>
+			</tr>
+			<tr>
+				<td>父权限Id:</td>
+				<td>
+					<input class="easyui-textbox" type="text" value="0">
+				</td>
+			</tr>
+
+			<tr>
+				<td>url:</td>
+				<td>
+					<input class="easyui-textbox" type="text" value="">
+				</td>
+			</tr>
+			
+			<tr>
+				<td>类型</td>
+				<td>
+					<select name="type">
+						<option value="0">菜单</option>
+						<option value="1">具体权限</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+	</form>
+	
+	<div style="padding:5px">
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()">提交</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()">重置</a>
+	</div>
+</div>

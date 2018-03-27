@@ -20,7 +20,7 @@
 	
 	<!-- FreeMarker视图渲染器配置 -->
 	<bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-		<property name="templateLoaderPath" value="/WEB-INF/html"></property>
+		<property name="templateLoaderPath" value="/WEB-INF/view"></property>
 		<property name="defaultEncoding" value="UTF-8"></property>
 	</bean>
 	
@@ -28,5 +28,6 @@
 		<property name="prefix" value=""></property>
 		<property name="suffix" value=".html" />
 		<property name="contentType" value="text/html; charset=UTF-8" />
+		<property name="requestContextAttribute" value="rc"></property>
 	</bean>
 </beans>

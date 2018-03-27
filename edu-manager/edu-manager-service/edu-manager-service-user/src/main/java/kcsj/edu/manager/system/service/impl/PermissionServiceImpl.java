@@ -7,8 +7,11 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 
+import kcsj.edu.common.pojo.EasyUIDataGridResult;
 import kcsj.edu.manager.mapper.PermissionMapper;
 import kcsj.edu.manager.pojo.Permission;
 import kcsj.edu.manager.pojo.vo.MenuVo;
@@ -56,6 +59,18 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
 			resultList.add(menuVo);
 		}
 		return resultList;
+	}
+
+	@Override
+	public EasyUIDataGridResult listPerms(int page, int rows) {
+		Page<Permission> pageInfo = new Page<>(page, rows);
+	
+		List<Permission> list = permissionMapper.selectPage(pageInfo, new EntityWrapper<>());
+		pageInfo = pageInfo.setRecords(list);
+		EasyUIDataGridResult result = new EasyUIDataGridResult();
+		result.setRows(list);
+		result.setTotal(pageInfo.getTotal());
+		return result;
 	}
 	
 }
