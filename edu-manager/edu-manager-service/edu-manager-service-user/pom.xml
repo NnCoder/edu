@@ -6,7 +6,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>edu-manager-service-system</artifactId>
-  <description>后台管理：系统管理Service</description>
+  <description></description>
   
   <dependencies>
   	<dependency>
